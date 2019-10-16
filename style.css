@@ -1,0 +1,29 @@
+.root {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  background: white;
+  color: tan;
+  height: 50px;
+  width: 400px;
+  border-radius: 20px;
+  font-family: cursive;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(images/46734453-old-camera-in-retro-vintage-background-design.jpg);
+  background-repeat: no-repeat;
+}
+
+button {
+  background: white;
+  border-radius: 10px;
+  height: 20px;
+  width: 60px;
+}

@@ -4,7 +4,7 @@
 //Secret:
 //c488af71cbe36e11
 const USE_PROXY = true;
-const defaultSearchTerm = "cat";
+const defaultSearchTerm = "photography";
 
 const fallbackLocation = { latitude: 40.4236, longitude: -86.11416 };
 
@@ -42,15 +42,17 @@ function assembleImagePageURL(photoObj) {
 function displayPhoto(photoObj) {
   const photoContainer = document.querySelector("#photoContainer");
   photoContainer.innerHTML = "";
+  const urlContainer = document.querySelector("#urlContainer");
+  urlContainer.innerHTML = "";
 
   const img = document.createElement("img");
-  img.href = assembleImageSourceURL(photoObj);
+  img.src = assembleImageSourceURL(photoObj);
   photoContainer.appendChild(img);
 
   const link = document.createElement("a");
   link.href = assembleImagePageURL(photoObj);
   link.appendChild(document.createTextNode("See on Flickr"));
-  photoContainer.appendChild(link);
+  urlContainer.appendChild(link);
 }
 
 function wireUpNextButton(photoArray) {
@@ -87,15 +89,6 @@ navigator.geolocation.getCurrentPosition(
   onGeolocationSuccess,
   onGeolocationFailure
 );
-// fetch(
-//   "https://flickr.com/services/rest/?api_key=97ba3134de42b898bdc7d414d4e197ea&format=json&nojsoncallback=1&method=flickr.photos.search&safe_search=1&per_page=5&lat=40.423600&lon=-86.114160&text=dog"
-// )
-//   .then(responseObject => responseObject.json())
-//   .then(hydratedBody => {
-//     output.dataset.characterId = hydratedBody.id;
-//     output.querySelector(
-//       "h1"
-//     ).textContent = `${hydratedBody.firstName} ${hydratedBody.lastName}`;
-//     const biography = document.createTextNode(hydratedBody.biography);
-//     output.appendChild(biography);
-//   });
+
+//followed along with Randy's demo.
+//Assisted by Janell Huyck, Chris Wilson, and Sasha Lukas for Bugs
